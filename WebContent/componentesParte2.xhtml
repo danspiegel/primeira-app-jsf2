@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head><title>Componentes para saída de texto e imagens.</title></h:head> 
+<h:body> 
+	<h:form id="formulario">
+		<h:commandButton id="btnGerar" value="Gerar Texto" action="#{controleComponentes.geraTexto()}" />
+		<h:commandLink action="#{controleComponentes.geraTexto()}">
+			<h:graphicImage library="images" name="jsf.png" />
+		</h:commandLink>
+	</h:form>
+	<h:outputText value="#{controleComponentes.texto}" escape="false" />
+	<br/>
+	<h:outputFormat value="Eu moro em {0}, {1}">
+		<f:param value="Passo Fundo" />
+		<f:param value="Rio Grande do Sul" />
+	</h:outputFormat>
+	<br/>
+	<h:graphicImage library="images" name="jsf.png" />
+	<br/>
+	<h:graphicImage url="/resources/images/jsf.png" />
+	<br/>
+	<h:graphicImage value="#{resource['images:jsf.png']}" />
+</h:body> 
+</html>
